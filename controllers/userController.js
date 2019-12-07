@@ -43,6 +43,7 @@ exports.createEvent = function(req, res, next){
 
 
 exports.attendEvent = function(req,res,next){
+	//params are email + event_name
 	User.findOne({emailAddress: req.body.email})
 		.then(user=>{
 			Event.findOne({name: req.body.event_name})
@@ -64,5 +65,80 @@ exports.attendEvent = function(req,res,next){
 							}
 			});
 		});
+	});
+};
+/*
+searchEventByName(partialQuery)
+searchByLocation
+searchByDates
+searchByCategory
+viewEventDetails
+*/
+exports.viewEventDetails = function(req, res, next){
+    Event.find({name: req.query.name})
+    .then(eventt => {
+        if (eventt){
+            res.status(200).json({data:eventt});
+        }
+        else{
+            msg='No event details found';
+            res.status(200).json({"msg":msg});
+        }
+    })
+};
+exports.searchEventByName = function(req,res,next){
+    //partialQuery
+    console.log(req.params);
+    console.log(req.params.partialQuery);
+    var regex = new RegExp(req.params.partialQuery, "i")
+	Event.find({name: regex})
+	.then(doc=>{
+		if(doc){
+			res.status(200).json({data:doc});
+		}
+		else{
+			let msg = 'No event found';
+			res.status(200).json({"msg":msg});
+		}
+	});
+};
+exports.searchEventByLocation = function(req,res,next){
+    //city 	
+    var regex = new RegExp(req.params.location, "i")
+	Event.find({address: regex})
+	.then(doc=>{
+		if(doc){
+			res.status(200).json({data:doc});
+		}
+		else{
+			let msg = 'No event found';
+			res.status(200).json({"msg":msg});
+		}
+	});
+};
+exports.searchEventByDates = function(req,res,next){
+    //startdate, enddate
+	Event.find({start_date:{$gte:new Date(req.params.lower), $lte:new Date(req.params.upper)}})
+	.then(doc=>{
+		if(doc){
+			res.status(200).json({data:doc});
+		}
+		else{
+			let msg = 'No events found';
+			res.status(200).json({"msg":msg});
+		}
+	});
+};
+exports.searchEventByCategory = function(req,res,next){
+	//category
+	Event.find({category:req.params.category})
+	.then(doc=>{
+		if(doc){
+			res.status(200).json({data:doc});
+		}
+		else{
+			let msg = 'No events found';
+			res.status(200).json({"msg":msg});
+		}
 	});
 };

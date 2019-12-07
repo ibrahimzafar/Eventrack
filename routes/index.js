@@ -107,4 +107,16 @@ router.get('/test', userController.test);
 
 router.post('/attendEvent', userController.attendEvent);
 
+/*
+searchEventByName(partialQuery)
+searchByLocation
+searchByDates
+searchByCategory
+viewEventDetails
+*/
+router.get('/viewEventDetails', userController.viewEventDetails);
+router.get('/searchByName/:partialQuery',userController.searchEventByName);
+router.get('/searchByLocation/:location',userController.searchEventByLocation);
+router.get('/searchByDates/:lower/:upper',userController.searchEventByDates);
+router.get('/searchByCategory/:category',userController.searchEventByCategory);
 module.exports = router;

@@ -1,0 +1,442 @@
+{
+	"info": {
+		"_postman_id": "3682e4d1-6503-40ab-af92-7a9ca051ae5a",
+		"name": "Final Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin: Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"emailAddress\":\"ibrahim@gmail.com\",\n\t\"name\":\"ibrahim zafar\",\n\t\"mobile\":\"03393458454\",\n\t\"password\":\"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/admin/adminRegister",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"adminRegister"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User: Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"xyz@gmail.com\",\n\t\"password\":\"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User: AttendEvent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"event_name\": \"CokeFest\",\n    \"email\": \"3rduser@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/attendEvent",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"attendEvent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User: CreateEvent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"CokeFest\",\n    \"start_date\": \"2020-04-12\",\n    \"end_date\": \"2020-04-14\",\n    \"details\": \"Happening in Lahore\",\n    \"registration_link\": \"http:// etc etc\",\n    \"address\": \"Lahore mein\",\n    \"latitude\": \"some latitude\",\n    \"longitude\": \"some longitude\",\n    \"category\": \"some category\",\n    \"creator_name\": \"some waila banda\",\n    \"creator_email\": \"waila@hotmail.com\",\n    \"creator_mobile\": \"04354342343\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/createEvent",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"createEvent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin: Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"ibrahim@gmail.com\", \n\t\"password\": \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/admin/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User: CreateEvent2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Job Fair 2012\",\n    \"start_date\": \"2020-06-12\",\n    \"end_date\": \"2020-06-14\",\n    \"details\": \"Happening in Lahore\",\n    \"registration_link\": \"http://ds etc etc\",\n    \"address\": \"Karachi mein\",\n    \"latitude\": \"some latitude\",\n    \"longitude\": \"some longitude\",\n    \"category\": \"some category\",\n    \"creator_name\": \"some other waila banda\",\n    \"creator_email\": \"waila2@hotmail.com\",\n    \"creator_mobile\": \"04354356043\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/createEvent",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"createEvent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin: ApproveEvent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"CokeFest\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/admin/approveEvent",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"approveEvent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin: ViewUnapprovedEvents",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/admin/viewUnapprovedEvents",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"viewUnapprovedEvents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin: ViewEventDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/admin/viewEventDetails?name=CokeFest",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"viewEventDetails"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "CokeFest"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin: searchByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/admin/searchByName/fest",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"searchByName",
+						"fest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin: searchByLocation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/admin/searchByLocation/lahore",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"searchByLocation",
+						"lahore"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin: SearchByDates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/admin/searchByDates/2020-03-14/2020-05-14",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"searchByDates",
+						"2020-03-14",
+						"2020-05-14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin: SearchByCategory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/admin/searchByCategory/food",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"searchByCategory",
+						"food"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin: EventAttendees",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:3000/admin/eventAttendees/CokeFest",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"eventAttendees",
+						"CokeFest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin: UserEvents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/admin/userEvents/seconduser",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"userEvents",
+						"seconduser"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
